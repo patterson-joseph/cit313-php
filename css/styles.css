@@ -1,3 +1,9 @@
+.family-picture {
+    height: 300px;
+    float: left;
+    margin-right: 15px;
+}
+
 .main.container {
     margin-top: 60px;
 }
