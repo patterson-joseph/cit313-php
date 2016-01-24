@@ -7,7 +7,7 @@
 
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
-		<link rel="stylesheet" href="css/styles.css" />
+		<link rel="stylesheet" href="/css/styles.css" />
 
 		<title>Nerd Data</title>
 	</head>
@@ -29,20 +29,7 @@
 						<li class="dropdown<?php echo $current_page == 'assignments' ? ' active' : '';?>">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Assignments <span class="caret"></span></a>
 							<ul class="dropdown-menu">
-								<li><a href="/assignments">Week 1</a></li>
-								<li><a href="/assignments">Week 2</a></li>
-								<li><a href="/assignments">Week 3</a></li>
-								<li><a href="/assignments">Week 4</a></li>
-								<li><a href="/assignments">Week 5</a></li>
-								<li><a href="/assignments">Week 6</a></li>
-								<li><a href="/assignments">Week 7</a></li>
-								<li><a href="/assignments">Week 8</a></li>
-								<li><a href="/assignments">Week 9</a></li>
-								<li><a href="/assignments">Week 10</a></li>
-								<li><a href="/assignments">Week 11</a></li>
-								<li><a href="/assignments">Week 12</a></li>
-								<li><a href="/assignments">Week 13</a></li>
-								<li><a href="/assignments">Week 14</a></li>
+								<li><a href="/assignments/php_survey">PHP Survey</a></li>
 							</ul>
 						</li>
 					</ul>
