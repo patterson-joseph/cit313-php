@@ -5,7 +5,7 @@
 
 	$games = Stream::top_games();
 ?>
-	<div class="main container">
+	<div class="main container-fluid">
 		<div class="page-content">
 			<div class="well col-lg-12 streams-filter">
 				<div class="col-lg-4">
