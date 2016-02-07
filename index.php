@@ -1,8 +1,10 @@
 <?php
 	$current_page = "streams";
 	require_once("header.php");
-	require_once("stream.php");
+	require_once("objects/stream.php");
 
+	$champions = Stream::champions();
+	$leagues = Stream::leagues();
 	$games = Stream::top_games();
 ?>
 	<div class="main container-fluid">
@@ -11,14 +13,6 @@
 				<div class="col-lg-4">
 					<h4>Top Games</h4>
 					<ul class="list-group top-games">
-						<!--
-									<li class="list-group-item checkbox">
-										<img src="/img/logo_original.png" height="30"/> All Games
-										<label class="pull-right">
-											<input type="checkbox" value="all-games" id="all-games">
-										</label>
-									</li>
-						-->
 						<?php
 						foreach($games as $game) {
 							?>
@@ -39,14 +33,6 @@
 						<div class="tab-content">
 							<div role="tabpanel" class="tab-pane active" id="lol">
 								<ul class="list-group leagues col-lg-6">
-									<!--
-															<li class="list-group-item checkbox">
-																<img src="/img/logo_original.png" height="30"/> All Leagues
-																<label class="pull-right">
-																	<input type="checkbox" value="all-leagues" id="all-leagues">
-																</label>
-															</li>
-									-->
 									<?php
 									foreach($leagues as $league) {
 										?>
@@ -59,14 +45,6 @@
 									<?php } ?>
 								</ul>
 								<ul class="list-group champions col-lg-6">
-									<!--
-															<li class="list-group-item checkbox">
-																<img src="/img/logo_original.png" height="30"/> All Champions
-																<label class="pull-right">
-																	<input type="checkbox" value="all-champions" id="all-champions">
-																</label>
-															</li>
-									-->
 									<?php
 									foreach($champions as $champion) {
 										?>
@@ -133,8 +111,12 @@
 			var getNextStreams = function() {
 				$.ajax({
 					method: "POST",
-					url: "/streams/get_next_streams",
-					data: { offset: offset, filter: stream_filter }
+					url: "/streams",
+					data: {
+						action: 'get_next_streams'
+						offset: offset,
+						filter: stream_filter
+					}
 				}).done(function(data) {
 					var streams = JSON.parse(data),
 						league = "";
