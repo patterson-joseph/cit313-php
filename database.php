@@ -1,10 +1,10 @@
 <?php
-//	$host = getenv('OPENSHIFT_MYSQL_DB_HOST');
-//	$username = getenv('OPENSHIFT_MYSQL_DB_USERNAME');
-//	$password = getenv('OPENSHIFT_MYSQL_DB_PASSWORD');
-	$host = 'localhost';
-	$username = 'root';
-	$password = '';
+	$host = getenv('OPENSHIFT_MYSQL_DB_HOST');
+	$username = getenv('OPENSHIFT_MYSQL_DB_USERNAME');
+	$password = getenv('OPENSHIFT_MYSQL_DB_PASSWORD');
+//	$host = 'localhost';
+//	$username = 'root';
+//	$password = '';
 	$dbname = 'nerddata';
 
 	try {
