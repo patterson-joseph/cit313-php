@@ -25,13 +25,14 @@
 				</div>
 				<div id="navbar" class="navbar-collapse collapse" aria-expanded="false" style="height: 1px;">
 					<ul class="nav navbar-nav">
-						<li<?php echo $current_page == 'about' ? ' class="active"' : '';?>><a href="/about">About</a></li>
+						<li<?php echo $current_page == 'streams' ? ' class="active"' : '';?>><a href="/streams">Streams</a></li>
 						<li class="dropdown<?php echo $current_page == 'assignments' ? ' active' : '';?>">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Assignments <span class="caret"></span></a>
 							<ul class="dropdown-menu">
 								<li><a href="/assignments/php_survey">PHP Survey</a></li>
 							</ul>
 						</li>
+						<li<?php echo $current_page == 'about' ? ' class="active"' : '';?>><a href="/about">About</a></li>
 					</ul>
 				</div>
 			</div>
