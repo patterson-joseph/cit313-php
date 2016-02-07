@@ -1,5 +1,5 @@
 <?php
-	$host = 'localhost';
+	$host = getenv('OPENSHIFT_MYSQL_DB_HOST');
 	$username = getenv('OPENSHIFT_MYSQL_DB_USERNAME');
 	$password = getenv('OPENSHIFT_MYSQL_DB_PASSWORD');
 	$dbname = 'nerddata';
