@@ -113,7 +113,7 @@
 					method: "POST",
 					url: "/streams",
 					data: {
-						action: 'get_next_streams'
+						action: 'get_next_streams',
 						offset: offset,
 						filter: stream_filter
 					}

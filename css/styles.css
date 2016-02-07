@@ -7,3 +7,208 @@
 .main.container {
     margin-top: 60px;
 }
+
+.navbar-brand img {
+    height: 20px;
+}
+
+body {
+    color: #5a5a5a;
+}
+
+/* CUSTOMIZE THE NAVBAR
+-------------------------------------------------- */
+
+/* Special class on .container surrounding .navbar, used for positioning it into place. */
+.navbar-wrapper {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 21;
+}
+
+/* Flip around the padding for proper display in narrow viewports */
+.navbar-wrapper > .container {
+    padding-right: 0;
+    padding-left: 0;
+}
+.navbar-wrapper .navbar {
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+/* CUSTOMIZE THE CAROUSEL
+-------------------------------------------------- */
+
+/* Carousel base class */
+.carousel {
+    margin: 50px 0;
+}
+/* Since positioning the image, we need to help out the caption */
+.carousel-caption {
+    z-index: 10;
+}
+
+/* MARKETING CONTENT
+-------------------------------------------------- */
+
+/* Center align the text within the three columns below the carousel */
+.marketing .col-lg-4 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+.marketing h2 {
+    font-weight: normal;
+}
+.marketing .col-lg-4 p {
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+
+/* Featurettes
+------------------------- */
+
+.featurette-divider {
+    margin: 80px 0; /* Space out the Bootstrap <hr> more */
+}
+
+/* Thin out the marketing headings */
+.featurette-heading {
+    font-weight: 300;
+    line-height: 1;
+    letter-spacing: -1px;
+}
+
+
+
+/* RESPONSIVE CSS
+-------------------------------------------------- */
+
+@media (min-width: 768px) {
+
+    /* Navbar positioning foo */
+    .navbar-wrapper .container {
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+    .navbar-wrapper .navbar {
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    /* The navbar becomes detached from the top, so we round the corners */
+    .navbar-wrapper .navbar {
+        border-radius: 4px;
+    }
+
+    /* Bump up size of carousel content */
+    .carousel-caption p {
+        margin-bottom: 20px;
+        font-size: 21px;
+        line-height: 1.4;
+    }
+
+    .featurette-heading {
+        font-size: 50px;
+    }
+}
+
+@media (min-width: 992px) {
+    .featurette-heading {
+        margin-top: 120px;
+    }
+}
+
+footer {
+    padding: 35px;
+    background: #EEE;
+    border-top: solid #CCC;
+}
+
+.champions {
+    height: 225px;
+    overflow: auto;
+}
+
+.stream_chat {
+    width: 100%;
+}
+
+img.stream_list {
+    width: 100%;
+}
+
+.leagues {
+    height: 225px;
+    overflow: auto;
+}
+
+.main-content {
+    margin-top: 65px;
+}
+
+.stats-table img {
+    height: 25px;
+}
+
+.stream_caption {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.streams-filter [type='checkbox'] {
+    height: 22px;
+    width: 22px;
+}
+
+.summoner-name {
+    margin-top: 0px;
+}
+
+.summoner-name img {
+    width: 45px;
+}
+
+.tab-content {
+    background-color: #FFF;
+    padding: 14px;
+    border: solid 1px #DDD;
+    border-top: 0px;
+}
+
+@media (min-width: 1200px) {
+    .tab-content {
+        height: 250px;
+    }
+}
+
+@media (max-width: 1199px) {
+    .stream-chat, .stream-player {
+        min-height: 350px;
+    }
+}
+
+.top-games {
+    height: 250px;
+    overflow: auto;
+}
+
+.twitch_player {
+    height: 100%;
+    width: 100%;
+}
+
+.page-content {
+    margin-top: 60px;
+}
+
+.clearfix {
+    clear: both;
+}
+
+.content {
+    margin: 65px 0;
+}
