@@ -1,6 +1,6 @@
 <?php
-	require_once('database.php');
-	require_once('objects/stream.php');
+	require_once('../database.php');
+	require_once('../objects/stream.php');
 
 	if (isset($_POST['action'])) {
 		switch($_POST['action']) {
