@@ -79,6 +79,7 @@ SQL;
 				OFFSET {$filter['offset']}
 SQL;
 
+			echo $sql;
 			$query = $db->prepare($sql);
 
 			$query->execute();

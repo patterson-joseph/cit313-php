@@ -125,7 +125,7 @@
 						'<a href="/stream?provider=twitch&channel_name=' + stream.channel_name + '">' +
 							'<img src="/img/league/' + stream.league + '.png" style="width: 50%" />' +
 							'<img src="' + stream.image + '"  style="width: 50%" />' +
-							'<h2>' + stream.channel_name + '</h2>' +
+							'<h2 class="text-center">' + stream.channel_name + '</h2>' +
 						'</a>'+
 					'</div>'
 				));
