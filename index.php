@@ -128,6 +128,19 @@
 							'<img src="' + stream.image + '"  style="width: 33%" />' +
 							'<h2 class="text-center">' + stream.channel_name + '</h2>' +
 						'</a>'+
+						'<div class="btn-group btn-group-justified" role="group">' +
+							'<div class="btn-group" role="group">' +
+								'<a href="/stream?provider=twitch&channel_name=' + stream.channel_name + '">' +
+									'<button type="button" class="btn btn-success">View</button>' +
+								'</a>' +
+							'</div>' +
+							'<div class="btn-group" role="group">' +
+								'<button type="button" class="btn btn-info">Edit</button>' +
+							'</div>' +
+							'<div class="btn-group" role="group">' +
+								'<button type="button" class="btn btn-danger">Delete</button>' +
+							'</div>' +
+						'</div>'+
 					'</div>'
 				));
 			});

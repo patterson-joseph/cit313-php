@@ -27,7 +27,13 @@
 				</div>
 				<div id="navbar" class="navbar-collapse collapse" aria-expanded="false" style="height: 1px;">
 					<ul class="nav navbar-nav">
-						<li<?php echo $current_page == 'streams' ? ' class="active"' : '';?>><a href="/">Streams</a></li>
+						<li class="dropdown<?php echo $current_page == 'streams' ? ' active' : '';?>">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Streams <span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="/">Stream List</a></li>
+								<li><a href="/add_stream.php">Add Stream</a></li>
+							</ul>
+						</li>
 						<li class="dropdown<?php echo $current_page == 'assignments' ? ' active' : '';?>">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Assignments <span class="caret"></span></a>
 							<ul class="dropdown-menu">
