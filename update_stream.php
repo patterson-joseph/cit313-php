@@ -11,7 +11,7 @@
 		if ($result) {
 			$message = '<div class="alert alert-success" role="alert">Stream updated!</div>';
 		} else {
-			$message = '<div class="alert alert-danger" role="alert">Problem adding stream...</div>';
+			$message = '<div class="alert alert-danger" role="alert">Problem updating stream...</div>';
 		}
 	}
 
@@ -19,9 +19,9 @@
 	$leagues = Stream::leagues();
 	$champions = Stream::champions();
 
-	$selected_game = $_GET['game'] || '';
-	$selected_champion = $_GET['champion'] || '';
-	$selected_league = $_GET['league'] || '';
+	$selected_game = $_GET['game'] ? $_GET['game'] : '';
+	$selected_champion = $_GET['champion'] ? $_GET['champion'] : '';
+	$selected_league = $_GET['league'] ? $_GET['league'] : '';
 
 	$game_html = '';
 	foreach($games as $game) {
@@ -58,7 +58,7 @@ HTML;
 HTML;
 	}
 
-	$channel_name = $_GET['channel_name'] || '';
+	$channel_name = $_GET['channel_name'] ? $_GET['channel_name'] : '';
 
 	//Form to add a new stream
 	echo <<<HTML
