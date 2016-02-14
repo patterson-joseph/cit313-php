@@ -133,10 +133,10 @@
 								'<a href="/stream?provider=twitch&channel_name=' + stream.channel_name + '" class="btn btn-success">View</a>' +
 							'</div>' +
 							'<div class="btn-group" role="group">' +
-								'<a href="/stream?provider=twitch&channel_name=' + stream.channel_name + '" class="btn btn-info">Edit</a>' +
+								'<a href="/update_stream.php?channel_name=' + stream.channel_name + '&game=' + stream.game + '&league=' + stream.league + '&champion=' + stream.champion + '" class="btn btn-info">Edit</a>' +
 							'</div>' +
 							'<div class="btn-group" role="group">' +
-								'<a href="/stream?provider=twitch&channel_name=' + stream.channel_name + '" class="btn btn-danger">Delete</a>' +
+								'<a href="/delete_stream.php?channel_name=' + stream.channel_name + '" class="btn btn-danger">Delete</a>' +
 							'</div>' +
 						'</div>'+
 					'</div>'

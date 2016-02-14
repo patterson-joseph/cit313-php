@@ -6,10 +6,10 @@
 	$message = '';
 
 	if ($_POST) {
-		$result = Stream::add($_POST);
+		$result = Stream::update($_POST);
 
 		if ($result) {
-			$message = '<div class="alert alert-success" role="alert">Stream added!</div>';
+			$message = '<div class="alert alert-success" role="alert">Stream updated!</div>';
 		} else {
 			$message = '<div class="alert alert-danger" role="alert">Problem adding stream...</div>';
 		}
@@ -19,26 +19,46 @@
 	$leagues = Stream::leagues();
 	$champions = Stream::champions();
 
+	$selected_game = $_GET['game'] || '';
+	$selected_champion = $_GET['champion'] || '';
+	$selected_league = $_GET['league'] || '';
+
 	$game_html = '';
 	foreach($games as $game) {
+		$checked = '';
+		if($selected_game == $game->name) {
+			$checked = ' checked="checked"';
+		}
 		$game_html .= <<<HTML
-			<option value="{$game->name}">{$game->name}</option>
+			<option value="{$game->name}"{$checked}>{$game->name}</option>
 HTML;
 	}
 
 	$league_html = '';
 	foreach($leagues as $league) {
+		$checked = '';
+		if($selected_league == $league->id) {
+			$checked = ' checked="checked"';
+		}
+
 		$league_html .= <<<HTML
-				<option value="{$league->id}">{$league->tier} {$league->division}</option>
+				<option value="{$league->id}"{$checked}>{$league->tier} {$league->division}</option>
 HTML;
 	}
 
 	$champion_html = '';
 	foreach($champions as $champion) {
+		$checked = '';
+		if($selected_champion == $champion->id) {
+			$checked = ' checked="checked"';
+		}
+
 		$champion_html .= <<<HTML
-				<option value="{$champion->id}">{$champion->name}</option>
+				<option value="{$champion->id}"{$checked}>{$champion->name}</option>
 HTML;
 	}
+
+	$channel_name = $_GET['channel_name'] || '';
 
 	//Form to add a new stream
 	echo <<<HTML
@@ -46,7 +66,7 @@ HTML;
 	<form method="post">
 		<div class="form-group">
 			<label for="channel_name">Channel Name</label>
-			<input type="text" name="channel_name" id="channel_name" class="form-control"/>
+			<input type="text" name="channel_name" id="channel_name" class="form-control" value="{$channel_name}"/>
 		</div>
 		<div class="form-group">
 			<label for="game">Game</label>
@@ -66,6 +86,7 @@ HTML;
 				{$champion_html}
 			</select>
 		</div>
-		<button type="submit" class="btn btn-default">Add Stream</button>
+		<input type="hidden" name="update" />
+		<button type="submit" class="btn btn-default">Update Stream</button>
 	</form>
 HTML;
