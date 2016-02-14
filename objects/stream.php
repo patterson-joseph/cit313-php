@@ -28,9 +28,10 @@
 		public static function get_streams($filter){
 			global $db;
 			$sql = <<<SQL
-				SELECT channel_name, game, league, champion, c.image
+				SELECT channel_name, game, league, champion, c.image, g.box
 				FROM stream
 				JOIN champion c ON c.id = stream.champion
+				JOIN stream_top_game g ON g.name = stream.game
 SQL;
 
 			$filtered = false;
@@ -80,7 +81,7 @@ SQL;
 				LIMIT 48
 				OFFSET {$filter['offset']}
 SQL;
-			
+
 			$query = $db->prepare($sql);
 
 			$query->execute();
