@@ -74,7 +74,7 @@ SQL;
 			return $query->fetchAll(PDO::FETCH_ASSOC);
 		}
 
-		public static function top_games(){
+		public static function games(){
 			global $db;
 			$query = $db->prepare("SELECT * FROM stream_top_game ORDER BY viewers DESC");
 			$query->execute();

@@ -5,7 +5,7 @@
 
 	$champions = Stream::champions();
 	$leagues = Stream::leagues();
-	$games = Stream::top_games();
+	$games = Stream::games();
 ?>
 	<div class="main container-fluid">
 		<div class="page-content">
