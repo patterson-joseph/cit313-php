@@ -23,16 +23,11 @@
 	$selected_champion = $_GET['champion'] ? $_GET['champion'] : '';
 	$selected_league = $_GET['league'] ? $_GET['league'] : '';
 
-	echo $selected_game . "<br/>";
-	echo $selected_champion . "<br/>";
-	echo $selected_league . "<br/>";
-
 	$game_html = '';
 	foreach($games as $game) {
-		echo $game->name . "<br/>";
 		$checked = '';
 		if($selected_game == $game->name) {
-			$checked = ' checked="checked"';
+			$checked = ' selected="selected"';
 		}
 		$game_html .= <<<HTML
 			<option value="{$game->name}"{$checked}>{$game->name}</option>
@@ -41,10 +36,9 @@ HTML;
 
 	$league_html = '';
 	foreach($leagues as $league) {
-		echo $league->id . "<br/>";
 		$checked = '';
 		if($selected_league == $league->id) {
-			$checked = ' checked="checked"';
+			$checked = ' selected="selected"';
 		}
 
 		$league_html .= <<<HTML
@@ -54,10 +48,9 @@ HTML;
 
 	$champion_html = '';
 	foreach($champions as $champion) {
-		echo $champion->id . "<br/>";
 		$checked = '';
 		if($selected_champion == $champion->id) {
-			$checked = ' checked="checked"';
+			$checked = ' selected="selected"';
 		}
 
 		$champion_html .= <<<HTML
