@@ -18,6 +18,14 @@
 			return $query->fetchAll();
 		}
 
+		public static function delete($channel_name) {
+			global $db;
+			$query = $db->prepare("DELETE FROM stream WHERE channel_name = :channel_name");
+			$query->bindParam(':channel_name', $channel_name);
+			$query->execute();
+			return $query->rowCount();
+		}
+
 		public static function leagues() {
 			global $db;
 			$query = $db->prepare("SELECT * FROM league ORDER BY `id`");
