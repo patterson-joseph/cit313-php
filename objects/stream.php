@@ -28,8 +28,9 @@
 		public static function get_streams($filter){
 			global $db;
 			$sql = <<<SQL
-				SELECT channel_name, channel_status, game, league, champion
+				SELECT channel_name, channel_status, game, league, champion, c.image
 				FROM stream
+				JOIN champion c ON c.id = stream.champion
 SQL;
 
 			$filtered = false;
