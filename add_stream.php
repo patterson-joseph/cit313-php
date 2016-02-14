@@ -1,10 +1,20 @@
 <?php
 	// Check if they are logged in
 
-
 	$current_page = "streams";
 	require_once("header.php");
 	require_once("objects/stream.php");
+
+	$message = '';
+	if ($_POST) {
+		$result = Stream::add($_POST);
+
+		if($result) {
+			$message = '<div class="alert alert-success" role="alert">Stream added!</div>';
+		} else {
+			$message = '<div class="alert alert-danger" role="alert">Problem adding stream...</div>';
+		}
+	}
 
 	$games = Stream::games();
 	$leagues = Stream::leagues();
@@ -20,20 +30,21 @@ HTML;
 	$league_html = '';
 	foreach($leagues as $league) {
 		$league_html .= <<<HTML
-				<option value="{$league->tier}">{$league->tier}</option>
+				<option value="{$league->id}">{$league->tier} {$league->division}</option>
 HTML;
 	}
 
 	$champion_html = '';
 	foreach($champions as $champion) {
 		$champion_html .= <<<HTML
-				<option value="{$champion->name}">{$champion->name}</option>
+				<option value="{$champion->id}">{$champion->name}</option>
 HTML;
 	}
 
 	//Form to add a new stream
 	echo <<<HTML
-	<form>
+	{$message}
+	<form method="post">
 		<div class="form-group">
 			<label for="channel_name">Channel Name</label>
 			<input type="text" name="channel_name" id="channel_name" class="form-control"/>

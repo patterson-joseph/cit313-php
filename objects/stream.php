@@ -1,5 +1,16 @@
 <?php
 	class Stream {
+		public static function add($data) {
+			global $db;
+			$query = $db->prepare("INSERT INTO stream (game, channel_name, league, champion) VALUES (:game, :channel_name, :league, :champion)");
+			$query->bindParam(':game', $data['game']);
+			$query->bindParam(':channel_name', $data['channel_name']);
+			$query->bindParam(':league', $data['league']);
+			$query->bindParam(':champion', $data['champion']);
+			$query->execute();
+			return $query->rowCount();
+		}
+
 		public static function champions() {
 			global $db;
 			$query = $db->prepare("SELECT * FROM champion ORDER BY `name`");
