@@ -39,3 +39,5 @@
 				</div>
 			</div>
 		</nav>
+		<div class="main container-fluid">
+			<div class="page-content">
