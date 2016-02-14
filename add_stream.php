@@ -1,7 +1,11 @@
 <?php
 	// Check if they are logged in
 
+
+	$current_page = "streams";
+	require_once("header.php");
 	require_once("objects/stream.php");
+
 	$games = Stream::games();
 	$leagues = Stream::leagues();
 	$champions = Stream::champions();
