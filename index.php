@@ -123,9 +123,9 @@
 				$('.streams-list').append($.parseHTML(
 					'<div class="col-lg-2">' +
 						'<a href="/stream?provider=twitch&channel_name=' + stream.channel_name + '">' +
-							'<img src="/img/league/' + stream.league + '.png" height="40" class="pull-left" />' +
-							'<img src="' + stream.image + '" height="40" class="pull-left" />' +
-							stream.channel_name +
+							'<img src="/img/league/' + stream.league + '.png" style="width: 50%" />' +
+							'<img src="' + stream.image + '"  style="width: 50%" />' +
+							'<h2>' + stream.channel_name + '</h2>' +
 						'</a>'+
 					'</div>'
 				));
