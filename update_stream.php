@@ -63,11 +63,8 @@ HTML;
 	//Form to add a new stream
 	echo <<<HTML
 	{$message}
+	<h3>Update channel: {$channel_name}</h3>
 	<form method="post">
-		<div class="form-group">
-			<label for="channel_name">Channel Name</label>
-			<input type="text" name="channel_name" id="channel_name" class="form-control" value="{$channel_name}"/>
-		</div>
 		<div class="form-group">
 			<label for="game">Game</label>
 			<select name="game" id="game" class="form-control">
@@ -86,7 +83,7 @@ HTML;
 				{$champion_html}
 			</select>
 		</div>
-		<input type="hidden" name="update" />
+		<input type="hidden" name="channel_name" id="channel_name" class="form-control" value="{$channel_name}"/>
 		<button type="submit" class="btn btn-default">Update Stream</button>
 	</form>
 HTML;

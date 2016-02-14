@@ -94,4 +94,15 @@ SQL;
 			$query->execute();
 			return $query->fetchAll();
 		}
+
+		public static function update($data) {
+			global $db;
+			$query = $db->prepare("UPDATE stream SET game = :game, league = :league, champion = :champion WHERE channel_name = :channel_name");
+			$query->bindParam(':game', $data['game']);
+			$query->bindParam(':channel_name', $data['channel_name']);
+			$query->bindParam(':league', $data['league']);
+			$query->bindParam(':champion', $data['champion']);
+			$query->execute();
+			return $query->rowCount();
+		}
 	}
