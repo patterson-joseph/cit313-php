@@ -120,19 +120,16 @@
 				league = "";
 
 			$.each(streams, function(index, stream){
-				if(stream.game == "League of Legends" && stream.league_number) {
-					league = '<img src="/img/league/' + stream.league_number + '.png" height="40" class="pull-left" />';
+				if(stream.game == "League of Legends" && stream.league) {
+					league = '<img src="/img/league/' + stream.league + '.png" height="40" class="pull-left" />';
 				} else {
 					league = "";
 				}
 
 				$('.streams-list').append($.parseHTML(
 					'<div class="col-lg-2">'+
-					'<a href="/stream?provider=twitch&channel_name=' + stream.channel_name + '"><img src="'+ stream.preview_medium + '" alt="' + stream.channel_status + '" class="stream_list"></a>'+
 					'<p class="stream_caption">' + league +
 					'<a href="/stream?provider=twitch&channel_name=' + stream.channel_name + '">' + stream.channel_status + '</a>'+
-					'<br/>'+
-					stream.viewers + ' viewers on ' + stream.channel_display_name +
 					'</p></div>'
 				));
 			});

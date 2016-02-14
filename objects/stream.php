@@ -28,9 +28,8 @@
 		public static function get_streams($filter){
 			global $db;
 			$sql = <<<SQL
-				SELECT stats.league_number, stats.summoner_name, stream.channel_display_name, stream.channel_name, stream.channel_status, stream.game, stream.preview_medium, stream.viewers, MAX(stats.votes)
+				SELECT channel_name, channel_status, game, league, champion
 				FROM stream
-				LEFT JOIN stats ON stats.channel_name = stream.channel_name
 SQL;
 
 			$filtered = false;
@@ -58,7 +57,7 @@ SQL;
 				$where = " WHERE";
 				if($champions) {
 					$champions = rtrim($champions, ',');
-					$where .= " championId IN ($champions)";
+					$where .= " champion IN ($champions)";
 				}
 
 				if($games) {
@@ -68,13 +67,13 @@ SQL;
 
 				if($leagues) {
 					$leagues = rtrim($leagues, ',');
-					$where .= " league_number IN ($leagues)";
+					$where .= " league IN ($leagues)";
 				}
 			}
 
 			$sql .= <<<SQL
 				{$where} GROUP BY stream.channel_name
-				ORDER BY stream.viewers DESC
+				ORDER BY stream.channel_name DESC
 				LIMIT 48
 				OFFSET {$filter['offset']}
 SQL;
