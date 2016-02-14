@@ -130,15 +130,13 @@
 						'</a>'+
 						'<div class="btn-group btn-group-justified" role="group">' +
 							'<div class="btn-group" role="group">' +
-								'<a href="/stream?provider=twitch&channel_name=' + stream.channel_name + '">' +
-									'<button type="button" class="btn btn-success">View</button>' +
-								'</a>' +
+								'<a href="/stream?provider=twitch&channel_name=' + stream.channel_name + '" class="btn btn-success">View</a>' +
 							'</div>' +
 							'<div class="btn-group" role="group">' +
-								'<button type="button" class="btn btn-info">Edit</button>' +
+								'<a href="/stream?provider=twitch&channel_name=' + stream.channel_name + '" class="btn btn-info">Edit</a>' +
 							'</div>' +
 							'<div class="btn-group" role="group">' +
-								'<button type="button" class="btn btn-danger">Delete</button>' +
+								'<a href="/stream?provider=twitch&channel_name=' + stream.channel_name + '" class="btn btn-danger">Delete</a>' +
 							'</div>' +
 						'</div>'+
 					'</div>'
