@@ -87,3 +87,5 @@ HTML;
 		<button type="submit" class="btn btn-default">Update Stream</button>
 	</form>
 HTML;
+
+	require_once("footer.php");

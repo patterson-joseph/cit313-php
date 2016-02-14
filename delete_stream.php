@@ -8,7 +8,9 @@
 	$result = Stream::delete($_GET['channel_name']);
 
 	if ($result) {
-		$message = '<div class="alert alert-success" role="alert">Stream deleted!</div>';
+		echo '<div class="alert alert-success" role="alert">Stream deleted!</div>';
 	} else {
-		$message = '<div class="alert alert-danger" role="alert">Problem deleting stream...</div>';
+		echo '<div class="alert alert-danger" role="alert">Problem deleting stream...</div>';
 	}
+
+	require_once("footer.php");

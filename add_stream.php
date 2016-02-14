@@ -69,3 +69,5 @@ HTML;
 		<button type="submit" class="btn btn-default">Add Stream</button>
 	</form>
 HTML;
+
+	require_once("footer.php");
