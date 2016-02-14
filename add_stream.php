@@ -20,7 +20,7 @@ HTML;
 	$league_html = '';
 	foreach($leagues as $league) {
 		$league_html .= <<<HTML
-				<option value="{$league->tier}">{$game->tier}</option>
+				<option value="{$league->tier}">{$league->tier}</option>
 HTML;
 	}
 
@@ -34,20 +34,28 @@ HTML;
 	//Form to add a new stream
 	echo <<<HTML
 	<form>
-		<label for="channel_name">Channel Name</label>
-		<input type="text" name="channel_name" id="channel_name"/>
-		<label for="game">Game</label>
-		<select name="game" id="game">
-			{$game_html}
-		</select>
-		<label for="league">League</label>
-		<select name="league" id="league">
-			{$league_html}
-		</select>
-		<label for="champion">Champion</label>
-		<select name="champion" id="champion">
-			{$champion_html}
-		</select>
-		<input type="submit" value="Add Stream"/>
+		<div class="form-group">
+			<label for="channel_name">Channel Name</label>
+			<input type="text" name="channel_name" id="channel_name" class="form-control"/>
+		</div>
+		<div class="form-group">
+			<label for="game">Game</label>
+			<select name="game" id="game" class="form-control">
+				{$game_html}
+			</select>
+		</div>
+		<div class="form-group">
+			<label for="league">League</label>
+			<select name="league" id="league" class="form-control">
+				{$league_html}
+			</select>
+		</div>
+		<div class="form-group">
+			<label for="champion">Champion</label>
+			<select name="champion" id="champion" class="form-control">
+				{$champion_html}
+			</select>
+		</div>
+		<button type="submit" class="btn btn-default">Add Stream</button>
 	</form>
 HTML;
