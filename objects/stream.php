@@ -58,19 +58,21 @@ SQL;
 				$where = " WHERE";
 				if($champions) {
 					$champions = rtrim($champions, ',');
-					$where .= " champion IN ($champions)";
+					$where .= " champion IN ($champions) AND ";
 				}
 
 				if($games) {
 					$games = rtrim($games, ',');
-					$where .= " game IN ($games)";
+					$where .= " game IN ($games) AND ";
 				}
 
 				if($leagues) {
 					$leagues = rtrim($leagues, ',');
-					$where .= " league IN ($leagues)";
+					$where .= " league IN ($leagues) AND ";
 				}
 			}
+
+			$where = substr($where, 0, -5);
 
 			$sql .= <<<SQL
 				{$where} GROUP BY stream.channel_name
@@ -78,8 +80,7 @@ SQL;
 				LIMIT 48
 				OFFSET {$filter['offset']}
 SQL;
-
-			echo $sql;
+			
 			$query = $db->prepare($sql);
 
 			$query->execute();
