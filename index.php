@@ -121,12 +121,13 @@
 
 			$.each(streams, function(index, stream){
 				$('.streams-list').append($.parseHTML(
-					'<div class="col-lg-2">'+
-					'<p class="stream_caption">' +
-					'<img src="/img/league/' + stream.league + '.png" height="40" class="pull-left" />' +
-					'<img src="' + stream.image + '" height="40" class="pull-left" />' +
-					'<a href="/stream?provider=twitch&channel_name=' + stream.channel_name + '">' + stream.channel_status + '</a>'+
-					'</p></div>'
+					'<div class="col-lg-2">' +
+						'<a href="/stream?provider=twitch&channel_name=' + stream.channel_name + '">' +
+							'<img src="/img/league/' + stream.league + '.png" height="40" class="pull-left" />' +
+							'<img src="' + stream.image + '" height="40" class="pull-left" />' +
+							stream.channel_name +
+						'</a>'+
+					'</div>'
 				));
 			});
 		});
